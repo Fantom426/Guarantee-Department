@@ -1,0 +1,4 @@
+driver = org.firebirdsql.jdbc.FBDriver
+url = jdbc:firebirdsql:class.mmcs.sfedu.ru/3050:/fbdata/38/Nechaev.fdb?encoding=WIN1251
+user = IT38
+password = it38

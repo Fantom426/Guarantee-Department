@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+            prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lab.controller.MainController">
+    <children>
+        <SplitPane dividerPositions="0.7" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="2.0"
+                   AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <TabPane layoutX="14.0" layoutY="-3.0" prefHeight="594.0" prefWidth="632.0"
+                                 tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
+                                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <tabs>
+                                <Tab text="Поставщики">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <TableView fx:id="agentTableView" layoutX="-76.0" layoutY="-60.0"
+                                                           prefHeight="565.0" prefWidth="632.0"
+                                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="nameTableColumn" prefWidth="105.0"
+                                                                     text="Название"/>
+                                                        <TableColumn fx:id="townTableColumn" prefWidth="105.0"
+                                                                     text="Город"/>
+                                                        <TableColumn fx:id="phoneTableColumn" prefWidth="105.0"
+                                                                     text="Телефон"/>
+                                                        <TableColumn fx:id="payTableColumn" prefWidth="105.0"
+                                                                     text="Оклад"/>
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                    </columnResizePolicy>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Поставки">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <TableView fx:id="GuaranteeTableView" prefHeight="565.0"
+                                                           prefWidth="632.0" AnchorPane.bottomAnchor="0.0"
+                                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                           AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="goodTableColumn" prefWidth="105.0"
+                                                                     text="Товар"/>
+                                                        <TableColumn fx:id="warehouseTableColumn" prefWidth="105.0"
+                                                                     text="Склад"/>
+                                                        <TableColumn fx:id="good_numTableColumn" prefWidth="105.0"
+                                                                     text="Тип операции"/>
+                                                        <TableColumn fx:id="quantityTableColumn" prefWidth="105.0"
+                                                                     text="Количество"/>
+                                                        <TableColumn fx:id="break_infTableColumn" prefWidth="105.0"
+                                                                     text="Водитель"/>
+                                                        <TableColumn fx:id="statusTableColumn" prefWidth="105.0"
+                                                                     text="Статус"/>
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                    </columnResizePolicy>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Товары">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <TableView fx:id="goodTableView" layoutX="-61.0" layoutY="-99.0"
+                                                           prefHeight="565.0" prefWidth="632.0"
+                                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="nomenclatureTableColumn" prefWidth="105.0"
+                                                                     text="Название"/>
+                                                        <TableColumn fx:id="measureTableColumn" prefWidth="105.0"
+                                                                     text="Мера"/>
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                    </columnResizePolicy>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="19.0">
+                    <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="594.0" prefWidth="235.0"
+                              AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0"
+                              AnchorPane.topAnchor="10.0">
+                            <children>
+                                <VBox prefHeight="54.0" prefWidth="235.0">
+                                    <children>
+                                        <Button fx:id="refreshButton" focusTraversable="false" mnemonicParsing="false"
+                                                onMouseClicked="#handleRefreshAll" text="Обновить список">
+                                            <VBox.margin>
+                                                <Insets left="20.0" top="15.0"/>
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button fx:id="createGuaranteeButton" focusTraversable="false"
+                                                mnemonicParsing="false" text="Новая поставка">
+                                            <VBox.margin>
+                                                <Insets left="20.0" top="15.0"/>
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

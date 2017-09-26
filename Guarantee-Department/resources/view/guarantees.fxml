@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.controller.GuaranteesController">
+    <center>
+        <TableView fx:id="guarantiesTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="goodColumn" prefWidth="100.0" text="Товар" />
+                <TableColumn fx:id="agentColumn" prefWidth="100.0" text="Поставщик" />
+                <TableColumn fx:id="warehouseColumn" prefWidth="100.0" text="Склад" />
+                <TableColumn fx:id="good_numColumn" prefWidth="110.0" text="Номер поставки" />
+                <TableColumn fx:id="quantityColumn" prefWidth="100.0" text="Количество" />
+                <TableColumn fx:id="break_infColumn" prefWidth="150.0" text="Информация о поломке" />
+                <TableColumn fx:id="statusColumn" prefWidth="130.0" text="Состояние" />
+            <TableColumn fx:id="guaranteeTimeColumn" prefWidth="100.0" text="Время починки" />
+            </columns>
+        </TableView>
+    </center>
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="backBtn" mnemonicParsing="false" onAction="#goBack" text="Назад" />
+            </children>
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </HBox>
+    </top>
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0">
+               <children>
+                  <Button fx:id="guaranteeBtn"  disable="true" mnemonicParsing="false" onAction="#repaired" text="Ремонт завершен">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="cancelBtn" disable="true" mnemonicParsing="false" onAction="#notRepairable" text="Ремонт невозможен">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                   <Button fx:id="notBtn" disable="true" mnemonicParsing="false" onAction="#notGuarantee" text="Не гарантийный случай">
+                       <HBox.margin>
+                           <Insets left="5.0" />
+                       </HBox.margin>
+                   </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
